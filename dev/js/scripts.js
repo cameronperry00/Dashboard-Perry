@@ -1,16 +1,14 @@
 import { gsap } from "gsap";
-import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import { GSDevTools } from "gsap/GSDevTools";
 
-gsap.registerPlugin(MorphSVGPlugin);
+// import {numberThing} from "./demo-this"
 
-gsap.set("#box",{transformOrigin:"center"});
-gsap.set("#star",{transformOrigin:"center"});
+import { logoTL } from "./logo"
 
-let morphTL = gsap.timeline();
 
-// morphTL.to("#box", {duration: 1, morphSVG:"#star"});
 
-morphTL.to("#box", {duration: 1, morphSVG:"#star",rotation:180, fill:"#000",ease: "bounce.out"});
-        // .to("#box", {duration: 1, morphSVG:"#hello", fill:"#FB1515"});
+gsap.registerPlugin(GSDevTools);
 
-// morphTL.to("#box", {duration: 1, morphSVG:"#hello", fill:"#FB1515"});
+let mainTL = gsap.timeline();
+
+mainTL.add(logoTL);
